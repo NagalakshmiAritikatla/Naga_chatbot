@@ -1,0 +1,18 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+  
+- story: get fare details
+  steps:
+  - intent: get_fare
+    entities:
+    - train_number: "19038"
+    - from_station: "ST"
+    - to_station: "BVI"
+  - action: action_get_fare

@@ -1,0 +1,53 @@
+version: '3.1'
+
+intents:
+  - bot_challenge
+  - get_fare
+  - goodbye
+  - greet
+
+entities:
+  - from_station
+  - train_number
+  - to_station
+
+slots:
+  train_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_number
+  from_station:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: from_station
+  to_station:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: to_station
+
+responses:
+  utter_greet:
+  - text: Hello! How can I assist you today?
+  utter_ask_train_number:
+  - text: Please provide the train number.
+  utter_ask_from_station:
+  - text: Please provide the departure station code.
+  utter_ask_to_station:
+  - text: Please provide the destination station code.
+  utter_goodbye:
+  - text: Happy Journey!!
+  utter_iamabot:
+  - text: I am a bot, powered by JourneyJot.
+
+actions:
+- action_get_fare
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Train Fare Bot</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>body {
+        background: linear-gradient(135deg, #00fff7, #21a6da, #21b8da, #21dace, #09a3df);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 0;
+        height: 100vh;
+        background-image: url('https://m.media-amazon.com/images/I/71u3rKehqsL._AC_SL1400_.jpg');
+        background-size: cover;
+        background-position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(42, 39, 39);
+        text-shadow: rgba(0, 0, 0, 0.7);
+    }
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    .registration-container {
+        background: azure;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: rgb(0, 0, 0, 0);
+        margin-top: 80px; /* Adjusted margin to account for fixed navbar */
+    }
+    .navbar-brand img {
+        height: 40px;
+    }
+    .form-control {
+        background: rgb(255, 255, 255);
+        border: none;
+        color: white;
+    }
+    .form-control::placeholder {
+        color: #ccc;
+    }
+    .btn-primary {
+        background-color: #0044ff;
+        border-color: #11cb8a;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="static/img/logo.jpeg" alt="Logo">JOURNEY_JOT</a></img>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <marquee>
+                <h3 style="color: black;">JOURNEY_JOT</h3>
+        </div>
+        </marquee>
+        </div>
+    </nav>
+
+    <div class="container registration-container">
+        <h2 class="text-center">Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <h3>click login if you have already registered</h3>
+            <a href="index.html" style="background-color: white;">Login</a>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+            // Store the registration details in local storage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            localStorage.setItem('email', email);
+            // Redirect to the login page
+            window.location.href = 'index.html';
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
